@@ -1,32 +1,46 @@
 var angle = 0;
-var slider;
+var length;
 
 function setup() {
-	createCanvas(500,500);
-	slider = createSlider(0, TWO_PI, PI / 4, 0.01);
+	createCanvas(1000,750);
+	//slider = createSlider(0, TWO_PI, PI / 4, 0.01);
 };
 
 function draw() {
 	background(50);
-	var len = 20;
+	var len = $('#fb').val();
 	stroke(255);
-	translate(200, height);
-	angle = slider.value();
+	translate(width/2, height);
+	// Можно поиграть с углами.
+	angle = PI / 4;
+	length = $('#length').val()/100;
 	branch(len);
 };
+function update(){
+	draw();	
+}
 
 function branch(len) {
 	line(0, 0, 0, -len);
 	translate(0,-len);
-	if (len>5){
+	if (len>4){
 		push();
 		rotate(angle);
-		branch(len*0.5);
+		branch(len*length);
 		pop();
 		push();
 		rotate(-angle);
-		branch(len*0.5);
+		branch(len*length);
 		pop();
+		// Для 4-х веток.
+		// push();
+		// rotate(angle/0.5);
+		// branch(len*length);
+		// pop();
+		// push();
+		// rotate(-angle/0.5);
+		// branch(len*length);
+		// pop();
 	}
 
 }
