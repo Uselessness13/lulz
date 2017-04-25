@@ -4,15 +4,13 @@ var scl = 20;
 var food;
 
 function setup() {
-	// console.log(setup);
-	createCanvas(500,500);
+	createCanvas(660,660);
 	s = new Snake();
 	frameRate(10);
 	pl();
 };
 
 function draw() {
-	// console.log("draw");
 	background(50);
 	
 	if (s.eat(food)) {
@@ -26,7 +24,6 @@ function draw() {
 };
 
 function pl() {
-	// console.log("pl");
 	var cols = floor(width/scl);
 	var rows = floor(height/scl);
 	food = createVector(floor(random(cols)), floor(random(rows)));
@@ -34,7 +31,6 @@ function pl() {
 };
 
 function keyPressed() {
-	// console.log("kp");
 	if (!s.gd()){
 		var a = [0,0];
 		if (keyCode == UP_ARROW)
