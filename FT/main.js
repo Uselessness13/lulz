@@ -9,11 +9,11 @@ function setup() {
 function draw() {
 	background(50);
 	var len = $('#fb').val();
+	length = $('#length').val()/100;
 	stroke(255);
 	translate(width/2, height);
 	// Можно поиграть с углами.
 	angle = PI / 4;
-	length = $('#length').val()/100;
 	branch(len);
 };
 function update(){

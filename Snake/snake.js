@@ -61,7 +61,7 @@ function Snake() {
 		var colours = [floor(random(255)), floor(random(255)), floor(random(255))]
 		fill(colours[0], colours[1], colours[2]);
 		for (var i = 0; i < this.tail.length-1; i++) {
-			fill(colours[0]+(i*10), colours[1]+(i*10), colours[2]+(i*10));
+			fill(colours[0]-(i*10), colours[1]-(i*10), colours[2]-(i*10));
 			rect(this.tail[i].x, this.tail[i].y, scl, scl);
 		}
 		fill(floor(random(255)), floor(random(255)), floor(random(255)));
